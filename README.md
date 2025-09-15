@@ -1,0 +1,1 @@
+# FairSplit-Smart-Expense-Manager
