@@ -1,0 +1,38 @@
+          ┌───────────────────┐
+          │     User Input     │
+          │ (Payer, Amount,    │
+          │ Participants, Desc)│
+          └─────────┬─────────┘
+                    │
+                    ▼
+          ┌───────────────────┐
+          │   Expense Object   │
+          │ {payer, amount,    │
+          │ participants[],    │
+          │ description}       │
+          └─────────┬─────────┘
+                    │
+                    ▼
+          ┌───────────────────┐
+          │  Local Storage     │
+          │ (groups[], expenses)│
+          └─────────┬─────────┘
+                    │
+        ┌───────────┼────────────┐
+        ▼                          ▼
+┌───────────────────┐     ┌───────────────────┐
+│ Settlement Logic   │     │   Expense List    │
+│ (balances calc)    │     │  Table Rendering  │
+└─────────┬─────────┘     └─────────┬─────────┘
+          │                           │
+          ▼                           │
+┌───────────────────┐                 │
+│ Settlement Summary │                 │
+│ (Who owes whom)    │                 │
+└─────────┬─────────┘                 │
+          │                           │
+          ▼                           ▼
+ ┌───────────────────┐        ┌───────────────────┐
+ │   Export Options   │        │  Visualization    │
+ │  (PDF / CSV)       │        │   (Chart.js)      │
+ └───────────────────┘        └───────────────────┘

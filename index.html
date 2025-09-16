@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FairSplit – Smart Expense Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>FairSplit – Smart Expense Manager</h1>
+
+    <!-- Mock Login -->
+    <div class="card" id="loginCard">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" style="display:none;">
+      <div class="card">
+        <h2>Create Group</h2>
+        <input type="text" id="groupName" placeholder="Group Name">
+        <button onclick="createGroup()">Create Group</button>
+        <select id="groupSelect"></select>
+      </div>
+
+      <div class="card">
+        <h2>Add Expense</h2>
+        <input type="text" id="payer" placeholder="Payer Name">
+        <input type="number" id="amount" placeholder="Amount">
+        <input type="text" id="participants" placeholder="Participants (comma separated)">
+        <input type="text" id="description" placeholder="Description">
+        <button onclick="addExpense()">Add Expense</button>
+      </div>
+
+      <div class="card">
+        <h2>Expense List</h2>
+        <table id="expenseTable">
+          <thead>
+            <tr>
+              <th>Payer</th>
+              <th>Amount</th>
+              <th>Participants</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Settlement Summary</h2>
+        <ul id="summary"></ul>
+        <button onclick="exportPDF()">Export PDF</button>
+        <button onclick="exportCSV()">Export CSV</button>
+      </div>
+
+      <div class="card" id="chart-container">
+        <h2>Expense Chart</h2>
+        <canvas id="expenseChart"></canvas>
+      </div>
+
+      <div class="card">
+        <button onclick="clearData()">Clear All Data</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
